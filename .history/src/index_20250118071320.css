@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background Animation */
+.bg-animation {
+  animation: backgroundChange 15s infinite;
+}
+
+@keyframes backgroundChange {
+  0% {
+    background: url("/background1.jpg") no-repeat center center/cover;
+  }
+  33% {
+    background: url("/background2.jpg") no-repeat center center/cover;
+  }
+  66% {
+    background: url("/background3.jpg") no-repeat center center/cover;
+  }
+  100% {
+    background: url("/background1.jpg") no-repeat center center/cover;
+  }
+}
+
+/* Typing and Deleting Effect */
+.typing-effect {
+    font-family: "Courier New", Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(255, 255, 255, 0.75); /* Blinking cursor */
+    width: 0;
+    animation: typing 4s steps(40, end), erasing 4s steps(40, end) 4s infinite, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes erasing {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    from {
+      border-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-color: transparent;
+    }
+  }
+  
